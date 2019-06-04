@@ -7,9 +7,12 @@ const testBasicNodeAPIs = false;
 const testAsyncAPIs = false;
 const testDependencyFinder = true;
 
+// Multiple variations
 // const path = ".";
-const path = "./node_modules/request";
 // const path = "./test/fixtures/empty";
+// const path =
+("/Users/pedro/dev/preparation/projects/node/module-dependencies/node_modules/request");
+const path = "./node_modules/request";
 
 if (testBasicNodeAPIs) {
   fs.readdir(path, function(err, resp) {
