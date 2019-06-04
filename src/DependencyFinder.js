@@ -36,6 +36,7 @@ class DependencyFinder {
     let paths = await findFiles(path);
     let contents = await Promise.all(paths.map(readFileWithSource));
     let result = await Promise.all(contents.map(findModules));
+
     return result;
   }
 }

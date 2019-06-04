@@ -1,6 +1,7 @@
 const fs = require("fs");
 
-const { readdir, readFile } = require("../src/file-utils.js");
+const { readdir, readFile, findFiles } = require("../src/file-utils.js");
+let requestFiles = require("./fixtures/request-files.json");
 
 describe("file-utils", function() {
   let path = "./node_modules/request";
@@ -80,6 +81,15 @@ describe("file-utils", function() {
         expect(err).toEqual(error);
         done();
       });
+    });
+  });
+
+  describe("findFiles", function() {
+    it("finds the files for the request project", async function(done) {
+      let path = "./node_modules/request";
+      let files = await findFiles(path);
+      expect(files).toEqual(requestFiles);
+      done();
     });
   });
 });

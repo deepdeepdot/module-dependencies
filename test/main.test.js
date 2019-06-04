@@ -1,5 +1,5 @@
 let { DependencyFinder } = require("../src/DependencyFinder");
-let requestMap = require("./fixtures/request.json");
+let requestDependencies = require("./fixtures/request-dependencies.json");
 
 describe("main", function() {
   it("matches for an empty folder", async function(done) {
@@ -17,7 +17,7 @@ describe("main", function() {
       const path = "./node_modules/request";
       let df = new DependencyFinder();
       let map = await df.find(path);
-      expect(map).toEqual(requestMap);
+      expect(map).toEqual(requestDependencies);
       done();
     } catch (e) {}
   });
