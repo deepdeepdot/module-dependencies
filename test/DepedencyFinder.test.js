@@ -30,10 +30,11 @@ describe("DependencyFinder", function() {
       const path = "./node_modules/request";
       var result;
 
-      beforeEach(async function() {
+      beforeEach(async function(done) {
         try {
           result = await df.find(path);
           expect(typeof result).toBe("object");
+          done();
         } catch (e) {}
       });
 
@@ -49,8 +50,6 @@ describe("DependencyFinder", function() {
 
       it("and the array contains some num of elements", function() {
         expect(result.length).toBe(13);
-
-        console.log(result);
       });
 
       describe("and the first element", function() {

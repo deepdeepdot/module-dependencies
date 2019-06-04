@@ -1,12 +1,17 @@
 const fs = require("fs");
 
 const { readdir, readFile, findFiles } = require("./file-utils");
+const { DependencyFinder } = require("./DependencyFinder");
+
+const testBasicNodeAPIs = false;
+const testAsyncAPIs = false;
+const testDependencyFinder = true;
 
 // const path = ".";
 const path = "./node_modules/request";
 // const path = "./test/fixtures/empty";
 
-if (1) {
+if (testBasicNodeAPIs) {
   fs.readdir(path, function(err, resp) {
     if (err) throw err;
     console.log(resp);
@@ -44,11 +49,31 @@ let findRecursive = async function() {
 };
 
 let readFileAsync = async function() {
-  let content = await readFile(path + "/lib/" + "auth.js");
-  console.log(content.toString());
+  let path = "./node_modules/request";
+  let file = `${path}/lib/auth.js`;
+  let content = await readFile(file);
+  console.log("---");
+  console.log(content.toString().substr(0, 100));
+  console.log("---");
 };
 
-asyncRead();
-asyncReadWithTypes();
-findRecursive();
-readFileAsync();
+function runAsyncAPIs() {
+  asyncRead();
+  asyncReadWithTypes();
+  findRecursive();
+  readFileAsync();
+}
+
+if (testAsyncAPIs) {
+  runAsyncAPIs();
+}
+
+async function runDependencyManager() {
+  let df = new DependencyFinder();
+  let result = await df.find(path);
+  console.log(result);
+}
+
+if (testDependencyFinder) {
+  runDependencyManager();
+}

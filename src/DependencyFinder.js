@@ -1,8 +1,12 @@
 const { findFiles, readFile } = require("./file-utils");
 
+const indexStart = "require(".length + 1;
+
 async function findModules({ source, content }) {
-  let dependencies = [];
-  dependencies.push("dummy-dep");
+  let modules = content.match(/require\((.+)\)/g);
+  let dependencies = modules
+    ? modules.map(s => s.substring(indexStart, s.length - 2))
+    : [];
 
   return {
     source,
@@ -11,10 +15,10 @@ async function findModules({ source, content }) {
 }
 
 async function readFileWithSource(path) {
-  let content = await readFile(path);
+  let buffer = await readFile(path);
   return {
     source: path,
-    content
+    content: buffer.toString()
   };
 }
 
