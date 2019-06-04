@@ -4,7 +4,7 @@
   "description": "Find module dependencies in each of the source files from some folder",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test"
+    "test": "./node_modules/.bin/jasmine"
   },
   "author": "Pedro Ha",
   "license": "ISC",
