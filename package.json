@@ -1,0 +1,11 @@
+{
+  "name": "module-dependencies",
+  "version": "1.0.0",
+  "description": "Find module dependencies in each of the source files from some folder",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "author": "Pedro Ha",
+  "license": "ISC"
+}
