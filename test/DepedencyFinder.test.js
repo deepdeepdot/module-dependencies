@@ -21,7 +21,6 @@ describe("DependencyFinder", function() {
       try {
         var result = await df.find();
       } catch (e) {
-        expect(typeof e).toBe("object");
         expect(e.message).toBe("DependencyFinder.find(path): Missing path!");
       }
     });

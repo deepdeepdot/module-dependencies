@@ -1,0 +1,92 @@
+[
+  {
+    "source": "./node_modules/request/index.js",
+    "dependencies": ["extend", "./lib/cookies", "./lib/helpers", "./request"]
+  },
+  {
+    "source": "./node_modules/request/request.js",
+    "dependencies": [
+      "http",
+      "https",
+      "url",
+      "util",
+      "stream",
+      "zlib",
+      "aws-sign2",
+      "aws4",
+      "http-signature",
+      "mime-types",
+      "caseless",
+      "forever-agent",
+      "form-data",
+      "extend",
+      "isstream",
+      "is-typedarray",
+      "./lib/helpers",
+      "./lib/cookies",
+      "./lib/getProxyFromURI",
+      "./lib/querystring",
+      "./lib/har",
+      "./lib/auth",
+      "./lib/oauth",
+      "./lib/hawk",
+      "./lib/multipart",
+      "./lib/redirect",
+      "./lib/tunnel",
+      "performance-now",
+      "safe-buffer"
+    ]
+  },
+  {
+    "source": "./node_modules/request/lib/auth.js",
+    "dependencies": ["caseless", "uuid/v4", "./helpers"]
+  },
+  {
+    "source": "./node_modules/request/lib/cookies.js",
+    "dependencies": ["tough-cookie"]
+  },
+  {
+    "source": "./node_modules/request/lib/getProxyFromURI.js",
+    "dependencies": []
+  },
+  {
+    "source": "./node_modules/request/lib/har.js",
+    "dependencies": ["fs", "querystring", "har-validator", "extend"]
+  },
+  {
+    "source": "./node_modules/request/lib/hawk.js",
+    "dependencies": ["crypto"]
+  },
+  {
+    "source": "./node_modules/request/lib/helpers.js",
+    "dependencies": ["json-stringify-safe", "crypto", "safe-buffer"]
+  },
+  {
+    "source": "./node_modules/request/lib/multipart.js",
+    "dependencies": ["uuid/v4", "combined-stream", "isstream", "safe-buffer"]
+  },
+  {
+    "source": "./node_modules/request/lib/oauth.js",
+    "dependencies": [
+      "url",
+      "qs",
+      "caseless",
+      "uuid/v4",
+      "oauth-sign",
+      "crypto",
+      "safe-buffer"
+    ]
+  },
+  {
+    "source": "./node_modules/request/lib/querystring.js",
+    "dependencies": ["qs", "querystring"]
+  },
+  {
+    "source": "./node_modules/request/lib/redirect.js",
+    "dependencies": ["url"]
+  },
+  {
+    "source": "./node_modules/request/lib/tunnel.js",
+    "dependencies": ["url", "tunnel-agent"]
+  }
+]
