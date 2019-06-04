@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const { readdir, readFile } = require("../src/file-system.js");
+const { readdir, readFile } = require("../src/file-utils.js");
 
 describe("Node.fs", function() {
   describe("readdir", function() {

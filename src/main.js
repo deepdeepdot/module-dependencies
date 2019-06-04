@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const { readdir, readFile, findFiles } = require("./file-system");
+const { readdir, findFiles } = require("./file-utils");
 
 // const path = ".";
 const path = "./node_modules/request";
