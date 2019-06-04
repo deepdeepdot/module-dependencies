@@ -2,6 +2,7 @@ const { findFiles, readFile } = require("./file-utils");
 
 async function findModules({ source, content }) {
   let dependencies = [];
+  dependencies.push("dummy-dep");
 
   return {
     source,
@@ -29,11 +30,12 @@ class DependencyFinder {
       throw new Error("DependencyFinder.find(path): Missing path!");
     }
     let paths = await findFiles(path);
-    let result = await Promise.all(
-      paths.map(readFileWithSource).map(findModules)
-    );
+    let contents = await Promise.all(paths.map(readFileWithSource));
+    let result = await Promise.all(contents.map(findModules));
     return result;
   }
 }
 
-module.exports = DependencyFinder;
+exports.DependencyFinder = DependencyFinder;
+exports.readFileWithSource = readFileWithSource;
+exports.findModules = findModules;

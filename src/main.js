@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const { readdir, findFiles } = require("./file-utils");
+const { readdir, readFile, findFiles } = require("./file-utils");
 
 // const path = ".";
 const path = "./node_modules/request";
@@ -43,6 +43,12 @@ let findRecursive = async function() {
   console.log(files);
 };
 
+let readFileAsync = async function() {
+  let content = await readFile(path + "/lib/" + "auth.js");
+  console.log(content.toString());
+};
+
 asyncRead();
 asyncReadWithTypes();
 findRecursive();
+readFileAsync();
