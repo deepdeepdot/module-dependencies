@@ -1,7 +1,9 @@
+const fs = require("fs");
+
 class DependencyFinder {
-    find(path) {
-        return {};
-    }
+  find(path) {
+    return {};
+  }
 }
 
 module.exports = DependencyFinder;

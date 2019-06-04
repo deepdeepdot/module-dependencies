@@ -21,6 +21,5 @@ describe('DependencyFinder', function() {
             var result = df.find();
             expect(typeof result).toBe('object');
         });
-
     });
 })
