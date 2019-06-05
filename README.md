@@ -10,7 +10,7 @@ npm install
 
 ## Main
 
-Run against the `request` library, installed as specified by `package.json`
+Run against the [request](https://www.npmjs.com/package/request) library, installed as specified by `package.json`
 
 ```
 npm run main
